@@ -66,15 +66,6 @@ jobs:
         restore-keys: |
           aosp-${{ inputs.MANIFEST_BRANCH }}-
 
-    - name: Cache ccache
-      id: ccache-cache
-      uses: actions/cache@v4
-      with:
-        path: ${{ github.workspace }}/ccache
-        key: ccache-${{ inputs.MANIFEST_BRANCH }}-${{ github.run_id }}
-        restore-keys: |
-          ccache-${{ inputs.MANIFEST_BRANCH }}-
-
     - name: Prepare environment
       run: |
         sudo apt update && sudo apt upgrade -y
@@ -135,13 +126,6 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 16
-
-    - name: Configure ccache
-      run: |
-        echo "USE_CCACHE=1" >> $GITHUB_ENV
-        echo "CCACHE_DIR=${{ github.workspace }}/ccache" >> $GITHUB_ENV
-        echo "CCACHE_EXEC=/usr/bin/ccache" >> $GITHUB_ENV
-        ccache -M 5G
 
     - name: Building recovery
       run: |

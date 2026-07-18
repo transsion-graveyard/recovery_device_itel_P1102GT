@@ -52,15 +52,6 @@ jobs:
     - name: Clean-up
       uses: rokibhasansagar/slimhub_actions@main
 
-    - name: Cache ccache
-      id: ccache-cache
-      uses: actions/cache@v4
-      with:
-        path: ${{ github.workspace }}/ccache
-        key: ccache-ofox-${{ inputs.MANIFEST_BRANCH }}-${{ github.run_id }}
-        restore-keys: |
-          ccache-ofox-${{ inputs.MANIFEST_BRANCH }}-
-
     - name: Swap Space
       uses: pierotofy/set-swap-space@master
       with:
@@ -95,13 +86,6 @@ jobs:
         fi
         cd ${{ inputs.DEVICE_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
-
-    - name: Configure ccache
-      run: |
-        echo "CCACHE_DIR=${{ github.workspace }}/ccache" >> $GITHUB_ENV
-        echo "CCACHE_EXEC=/usr/bin/ccache" >> $GITHUB_ENV
-        echo "USE_CCACHE=1" >> $GITHUB_ENV
-        ccache -M 5G
 
     - name: Building OrangeFox
       run: |
