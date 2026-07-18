@@ -122,6 +122,7 @@ adapter_class.ko
 charger_class.ko
 mtk_charger_algorithm_class.ko
 sc8989x_charger.ko
+sgm415xx.ko
 pd_dbg_info.ko
 tcpc_class.ko
 aw35615_whole.ko
@@ -160,7 +161,7 @@ mac80211.ko
 tinysys-scmi.ko
 mtk-mbox-mailbox.ko
 irq-dbg.ko
-focaltech_tp_8205p.ko
+focaltech_touch_i2c_v42.ko
 awinic_sar.ko
 mtk-socinfo.ko
 mid_uart_dock.ko

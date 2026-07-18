@@ -125,6 +125,7 @@ adapter_class.ko
 charger_class.ko
 mtk_charger_algorithm_class.ko
 sc8989x_charger.ko
+sgm415xx.ko
 pd_dbg_info.ko
 tcpc_class.ko
 aw35615_whole.ko
@@ -148,6 +149,7 @@ tcpci_late_sync.ko
 mt6577_auxadc.ko
 mtk_battery_oc_throttling.ko
 mtk_low_battery_throttling.ko
+pmic_lvsys_notify.ko
 pmic_lbat_service.ko
 mtk_dynamic_loading_throttling.ko
 mtk_pbm.ko
@@ -165,7 +167,7 @@ mac80211.ko
 tinysys-scmi.ko
 mtk-mbox-mailbox.ko
 irq-dbg.ko
-focaltech_tp_8205p.ko
+focaltech_touch_i2c_v42.ko
 awinic_sar.ko
 mtk-socinfo.ko
 mtk_rpmsg_mbox.ko
