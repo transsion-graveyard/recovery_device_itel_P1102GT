@@ -56,7 +56,7 @@ jobs:
       id: ccache-cache
       uses: actions/cache@v4
       with:
-        path: ${{ runner.temp }}/ccache
+        path: ${{ github.workspace }}/ccache
         key: ccache-ofox-${{ inputs.MANIFEST_BRANCH }}-${{ github.run_id }}
         restore-keys: |
           ccache-ofox-${{ inputs.MANIFEST_BRANCH }}-
@@ -98,7 +98,7 @@ jobs:
 
     - name: Configure ccache
       run: |
-        echo "CCACHE_DIR=${{ runner.temp }}/ccache" >> $GITHUB_ENV
+        echo "CCACHE_DIR=${{ github.workspace }}/ccache" >> $GITHUB_ENV
         echo "CCACHE_EXEC=/usr/bin/ccache" >> $GITHUB_ENV
         echo "USE_CCACHE=1" >> $GITHUB_ENV
         ccache -M 5G
