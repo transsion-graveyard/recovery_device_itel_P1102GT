@@ -1,4 +1,4 @@
-LOCAL_PATH := device/itel/P13001L
+LOCAL_PATH := device/itel/P1102GT
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -47,8 +47,8 @@ PRODUCT_PROPERTY_OVERRIDES += ro.twrp.vendor_boot=true
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-PRODUCT_SHIPPING_API_LEVEL := 32
-PRODUCT_TARGET_VNDK_VERSION := 32
+PRODUCT_SHIPPING_API_LEVEL := 31
+PRODUCT_TARGET_VNDK_VERSION := 31
 
 # Boot control HAL
 PRODUCT_PACKAGES += \

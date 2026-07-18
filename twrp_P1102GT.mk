@@ -1,0 +1,14 @@
+$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, device/itel/P1102GT/device.mk)
+
+PRODUCT_BRAND := Itel
+PRODUCT_DEVICE := P1102GT
+PRODUCT_MANUFACTURER := ITEL
+PRODUCT_MODEL := itel P1102GT
+PRODUCT_NAME := twrp_P1102GT
+
+PRODUCT_GMS_CLIENTID_BASE := android-itel
+
+BUILD_FINGERPRINT := Itel/P1102GT-OP/itel-P1102GT:15/AP3A.240905.015.A2/1744711704:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="P1102GT-OP-user 12 AP3A.240905.015.A2 1744711704 release-keys"
